@@ -1,0 +1,1 @@
+docker exec sisvetor-db pg_dump svprod --no-owner -U postgres -F c > svprod.dump
