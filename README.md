@@ -89,6 +89,14 @@ Para reiniciar um container específico, de forma que ele utilize as configuraç
 docker-compose up -d sisvetor-backend
 ```
 
+## Atualizando o SisVetor
+
+Para atualizar uma imagem específica do SisVetor, execute o comando `docker-compose pull <nome do container>` na pasta raiz do repositório clonado, por exemplo:
+
+```bash
+docker-compose pull sisvetor-backend
+```
+
 ## Backup e Restauração
 
 Para realizar o backup dos dados do SisVetor, execute o script `backup.sh` na pasta raiz do repositório clonado.
