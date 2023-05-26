@@ -73,9 +73,10 @@ Para instalar o SisVetor, siga os seguintes passos:
 1. Clone este repositório
 2. Crie uma cópia do arquivo `.env.example` com o nome `.env` e preencha as variáveis de ambiente
 3. Atualize os arquivos config-sivetor-app.json e config-sivetor-landing.json com os dados do seu ambiente
-4. Execute o comando `docker-compose up -d` na pasta raiz do repositório clonado
-5. Aguarde a instalação dos componentes do SisVetor
-6. Acesse a landing page do SisVetor através do endereço http://localhost:80
+4. Dê as permissões necessárias ao arquivo wait-for-it para que possa ser executado: chmod +x /wait-for-it.sh
+5. Execute o comando `docker-compose up -d` na pasta raiz do repositório clonado
+6. Aguarde a instalação dos componentes do SisVetor
+7. Acesse a landing page do SisVetor através do endereço http://localhost:80
 
 ## Backup e Restauração
 
