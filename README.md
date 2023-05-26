@@ -37,6 +37,7 @@ O SisVetor é configurado através de variáveis de ambiente, que podem ser defi
 | SPRING_MAIL_PORT                  | Email port                      |
 | ARBOCONTROL_JWT_SECRET            | JWT Segredo para extratificação |
 | ARBOCONTROL_JWT_EXPIRATION_MILLIS | JWT Tempo Expiração             |
+| SISVETOR_BACKEND_URL              | URL do servidor backend         |
 
 Além disso, os arquivos `config-sivetor-app.json` e `config-sivetor-landing.json` na pasta raiz do repositório clonado devem ser atualizados com os dados do seu ambiente.
 
