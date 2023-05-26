@@ -1,0 +1,35 @@
+version: "3"
+services:
+  wikidb:
+    image: postgres:11-alpine
+    container_name: "wikidb"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: $WIKIJS_DB_PASS
+      POSTGRES_USER: $WIKIJS_DB_USER
+    restart: unless-stopped
+    volumes:
+      - db-wikijs-data:/var/lib/postgresql/data
+  wiki:
+    container_name: "wiki"
+    env_file:
+      - .env
+    image: requarks/wiki:2
+    depends_on:
+      - wikidb
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: wikidb
+      DB_PORT: 5432
+      DB_USER: $WIKIJS_DB_USER
+      DB_PASS: $WIKIJS_DB_PASS
+      DB_NAME: wiki
+    restart: unless-stopped
+    ports:
+      - 9993:3000
+    links:
+      - wikidb
+volumes:
+  db-wikijs-data:
