@@ -81,6 +81,14 @@ Para instalar o SisVetor App, Admin, Landing Page, Backend e Banco de Dados, sig
 
 Para instalar o SisVetor WikiJS, siga as instruções no arquivo [README.md](wikijs/README.md) na pasta wikijs.
 
+## Reiniciando containers
+
+Para reiniciar um container específico, de forma que ele utilize as configurações atualizadas, execute o comando `docker-compose up -d <nome do container>` na pasta raiz do repositório clonado, por exemplo:
+
+```bash
+docker-compose up -d sisvetor-backend
+```
+
 ## Backup e Restauração
 
 Para realizar o backup dos dados do SisVetor, execute o script `backup.sh` na pasta raiz do repositório clonado.
