@@ -89,6 +89,14 @@ Para reiniciar um container específico, de forma que ele utilize as configuraç
 docker-compose up -d sisvetor-backend
 ```
 
+## Visualizando logs
+
+Para visualizar os logs de um container específico, execute o comando `docker-compose logs -f <nome do container>` na pasta raiz do repositório clonado, por exemplo:
+
+```bash
+docker-compose logs sisvetor-backend --tail 100
+```
+
 ## Atualizando o SisVetor
 
 Para atualizar uma imagem específica do SisVetor, execute o comando `docker-compose pull <nome do container>` na pasta raiz do repositório clonado, por exemplo:
