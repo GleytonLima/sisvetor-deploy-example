@@ -2,6 +2,15 @@
 
 Este repositório contém a documentação do projeto SisVetor, utilizando a ferramenta WikiJS.
 
+Para subir o WikiJS, execute os seguintes passos:
+
+1. Clone este repositório
+2. Acesse a pasta wikijs
+3. Crie uma cópia do arquivo `.env.example` com o nome `.env` e preencha as variáveis de ambiente
+4. Execute o comando `docker-compose up -d` na pasta raiz do repositório clonado
+
+Por padrão, o WikiJS estará disponível na porta 9993 do servidor.
+
 ## Gerando backup
 
 Para gerar um backup do WikiJS, execute:

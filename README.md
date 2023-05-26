@@ -68,7 +68,7 @@ O SisVetor é composto por 6 componentes principais:
 
 ## Instalação
 
-Para instalar o SisVetor, siga os seguintes passos:
+Para instalar o SisVetor App, Admin, Landing Page, Backend e Banco de Dados, siga os seguintes passos:
 
 1. Clone este repositório
 2. Crie uma cópia do arquivo `.env.example` com o nome `.env` e preencha as variáveis de ambiente
@@ -77,6 +77,8 @@ Para instalar o SisVetor, siga os seguintes passos:
 5. Execute o comando `docker-compose up -d` na pasta raiz do repositório clonado
 6. Aguarde a instalação dos componentes do SisVetor
 7. Acesse a landing page do SisVetor através do endereço http://localhost:80
+
+Para instalar o SisVetor WikiJS, siga as instruções no arquivo [README.md](wikijs/README.md) na pasta wikijs.
 
 ## Backup e Restauração
 
