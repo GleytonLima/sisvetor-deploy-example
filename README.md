@@ -37,7 +37,11 @@ O SisVetor é configurado através de variáveis de ambiente, que podem ser defi
 | SPRING_MAIL_PORT                  | Email port                      |
 | ARBOCONTROL_JWT_SECRET            | JWT Segredo para extratificação |
 | ARBOCONTROL_JWT_EXPIRATION_MILLIS | JWT Tempo Expiração             |
-| SISVETOR_BACKEND_URL              | URL do servidor backend         |
+| SISVETOR_BACKEND_URL              | URL do servidor backend. usado, por exemplo, para configurar o link de recuperação de senha |
+| SPRING_MAIL_START_TLS_ENABLE      | (true ou false), habilitar ou desabilitar a funcionalidade de STARTTLS (Start Transport Layer Security) no servidor de email configurado no Spring |
+| SPRING_MAIL_SMTP_AUTH             | (true ou false), habilitar ou desabilitar a autenticação SMTP (Simple Mail Transfer Protocol) no servidor de email configurado no Spring |
+| SPRING_MAIL_START_TLS_REQUIRED    | (true ou false), usada para definir se o uso do STARTTLS (Start Transport Layer Security) é obrigatório ao se conectar ao servidor de email configurado no Spring |
+| SPRING_MAIL_SSL_ENABLED           | (true ou false), habilitar ou desabilitar o uso de SSL (Secure Socket Layer) ao se conectar ao servidor de email configurado no Spring |
 
 Além disso, os arquivos `config-sivetor-app.json` e `config-sivetor-landing.json` na pasta raiz do repositório clonado devem ser atualizados com os dados do seu ambiente.
 
