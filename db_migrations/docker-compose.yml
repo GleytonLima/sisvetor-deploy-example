@@ -1,0 +1,20 @@
+version: "3"
+services:
+  flyway:
+    image: flyway/flyway
+    env_file:
+      - .env
+    volumes:
+      - ./migrations:/flyway/migrations
+      - ./conf:/flyway/conf
+    environment:
+      - FLYWAY_URL=${FLYWAY_DB_URL}
+      - FLYWAY_USER=${POSTGRES_USER}
+      - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
+    command: migrate
+    networks:
+      - sisvetor-onpremisses_default
+
+networks:
+  sisvetor-onpremisses_default:
+    external: true

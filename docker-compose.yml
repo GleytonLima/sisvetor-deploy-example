@@ -22,7 +22,7 @@ services:
     ports:
       - 9992:80
   db:
-    image: gleytonlima/sisvetor-db:latest
+    image: postgis/postgis:16-master
     container_name: sisvetor-db
     restart: unless-stopped
     env_file:
@@ -49,14 +49,7 @@ services:
     volumes:
       - ./wait-for-it.sh:/app/wait-for-it.sh
     command:
-      [
-        "./wait-for-it.sh",
-        "db:5432",
-        "--",
-        "java",
-        "-jar",
-        "/app/sv-app.jar",
-      ]
+      ["./wait-for-it.sh", "db:5432", "--", "java", "-jar", "/app/sv-app.jar"]
 
 volumes:
   pgdata:

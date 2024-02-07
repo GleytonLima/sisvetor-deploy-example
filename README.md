@@ -94,7 +94,7 @@ docker-compose up -d sisvetor-backend
 Para visualizar os logs de um container específico, execute o comando `docker-compose logs -f <nome do container>` na pasta raiz do repositório clonado, por exemplo:
 
 ```bash
-docker-compose logs sisvetor-backend --tail 100
+docker-compose logs --tail 100 sisvetor-backend
 ```
 
 ## Atualizando o SisVetor
