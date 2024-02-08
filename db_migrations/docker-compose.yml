@@ -13,8 +13,8 @@ services:
       - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
     command: migrate
     networks:
-      - sisvetor-onpremisses_default
+      - sisvetor-network
 
 networks:
-  sisvetor-onpremisses_default:
+  sisvetor-network:
     external: true

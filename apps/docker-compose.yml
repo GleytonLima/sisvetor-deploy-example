@@ -7,6 +7,8 @@ services:
       - ./config-sisvetor-landing.json:/usr/share/nginx/html/config/config.json:ro
     ports:
       - 80:80
+    networks:
+      - sisvetor-network
   sisvetor-app:
     image: gleytonlima/sisvetor-app:latest
     container_name: sisvetor-app
@@ -14,6 +16,8 @@ services:
       - ./config-sisvetor-app.json:/usr/share/nginx/html/assets/config.json:ro
     ports:
       - 9991:80
+    networks:
+      - sisvetor-network
   sisvetor-admin:
     image: gleytonlima/sisvetor-admin:latest
     container_name: sisvetor-admin
@@ -21,19 +25,8 @@ services:
       - ./config-sisvetor-app.json:/usr/share/nginx/html/assets/config.json:ro
     ports:
       - 9992:80
-  db:
-    image: postgis/postgis:16-master
-    container_name: sisvetor-db
-    restart: unless-stopped
-    env_file:
-      - .env
-    ports:
-      - "5432:5432"
-    volumes:
-      - /opt/backups:/opt/backups
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+    networks:
+      - sisvetor-network
   sisvetor-backend:
     image: gleytonlima/sisvetor-backend
     container_name: sisvetor-backend
@@ -43,13 +36,16 @@ services:
       - 9995:9995
     env_file:
       - .env
-    depends_on:
-      db:
-        condition: service_healthy
     volumes:
       - ./wait-for-it.sh:/app/wait-for-it.sh
     command:
       ["./wait-for-it.sh", "db:5432", "--", "java", "-jar", "/app/sv-app.jar"]
+    networks:
+      - sisvetor-network
 
 volumes:
   pgdata:
+
+networks:
+  sisvetor-network:
+    external: true
