@@ -129,13 +129,36 @@ O SisVetor é composto por 6 componentes principais:
 
 Para instalar o SisVetor App, Admin, Landing Page, Backend e Banco de Dados, siga os seguintes passos:
 
-1. Clone este repositório
-2. Crie uma cópia do arquivo `.env.example` com o nome `.env` e preencha as variáveis de ambiente em cada pasta
-3. Atualize os arquivos config-sivetor-app.json e config-sivetor-landing.json com os dados do seu ambiente
-4. Dê as permissões necessárias ao arquivo wait-for-it para que possa ser executado: chmod +x /wait-for-it.sh
-5. Execute o comando `docker-compose up -d` na pasta raiz de cada pasta na seguinte ordem: db, db_migrations, apps
-6. Aguarde a instalação dos componentes do SisVetor
-7. Acesse a landing page do SisVetor através do endereço http://localhost:80
+## Aplicações
+
+Acesse a pasta `apps` do repositório clonado e execute o comando `docker-compose up -d` para subir as aplicações.
+
+```bash
+cd apps
+docker-compose up -d
+```
+
+## Banco de Dados
+
+Acesse a pasta `db` do repositório clonado e execute o comando `docker-compose up -d` para subir o banco de dados.
+
+```bash
+cd db
+docker-compose up -d
+```
+
+## Migrações do Banco de Dados
+
+Acesse a pasta `db_migrations` do repositório clonado e execute o comando `docker-compose up -d` para executar as migrações do banco de dados.
+
+```bash
+cd db_migrations
+docker-compose up -d
+```
+
+Inicialmente a aplicação estará disponível em `http://localhost:8080` e o usuário e senha padrão são `111.111.111-11` e `12345678`.
+
+## WikiJS
 
 Para instalar o SisVetor WikiJS, siga as instruções no arquivo [README.md](wikijs/README.md) na pasta wikijs.
 
