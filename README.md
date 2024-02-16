@@ -25,12 +25,15 @@ Vale ressaltar que em um ambiente onpromisses, deve ser configurado um servidor 
 
 # Parâmetros de Configuração
 
-Este projeto está divido em 4 (quatro) pastas:
+O projeto `sisvetor-deploy-example` está divido em 4 (quatro) pastas, conforme descrito a seguir:
 
-- apps
-- db
-- db_migrations
-- wikijs
+```
+sisvetor-deploy-example/
+├── apps
+├── db
+├── db_migrations
+└── wikijs
+```
 
 ## Apps
 
